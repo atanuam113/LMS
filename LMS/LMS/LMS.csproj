@@ -124,6 +124,7 @@
     <Content Include="admin_event_details.aspx" />
     <Content Include="admin_event_enquiry.aspx" />
     <Content Include="admin_exam_details.aspx" />
+    <Content Include="admin_notification.aspx" />
     <Content Include="admin_student_details.aspx" />
     <Content Include="admin_teacher_details.aspx" />
     <Content Include="admin_teacher_enquiry.aspx" />
@@ -134,6 +135,7 @@
     <Content Include="Content\materialize.css" />
     <Content Include="Content\style-mob.css" />
     <Content Include="Content\style.css" />
+    <Content Include="CSS\home.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fonts\fontawesome-webfont5b62.svg" />
@@ -303,6 +305,8 @@
     <Content Include="fonts\fonts\fontawesome-webfont5b62.woff2" />
     <Content Include="fonts\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="Registration.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -340,6 +344,14 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Student\All_Course.aspx" />
+    <Content Include="Student\All_Events.aspx" />
+    <Content Include="Student\Index.aspx" />
+    <Content Include="Student\Student_Class_Time.aspx" />
+    <Content Include="Student\Student_Course.aspx" />
+    <Content Include="Student\Student_Dashboard.aspx" />
+    <Content Include="Student\Student_Exam.aspx" />
+    <Content Include="Student\Student_Profile.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -472,6 +484,13 @@
     <Compile Include="admin_exam_details.aspx.designer.cs">
       <DependentUpon>admin_exam_details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin_notification.aspx.cs">
+      <DependentUpon>admin_notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_notification.aspx.designer.cs">
+      <DependentUpon>admin_notification.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin_student_details.aspx.cs">
       <DependentUpon>admin_student_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -519,7 +538,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -534,6 +567,69 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Student\All_Course.aspx.cs">
+      <DependentUpon>All_Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\All_Course.aspx.designer.cs">
+      <DependentUpon>All_Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\All_Events.aspx.cs">
+      <DependentUpon>All_Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\All_Events.aspx.designer.cs">
+      <DependentUpon>All_Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student_Class_Time.aspx.cs">
+      <DependentUpon>Student_Class_Time.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student_Class_Time.aspx.designer.cs">
+      <DependentUpon>Student_Class_Time.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student_Course.aspx.cs">
+      <DependentUpon>Student_Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student_Course.aspx.designer.cs">
+      <DependentUpon>Student_Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student_Dashboard.aspx.cs">
+      <DependentUpon>Student_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student_Dashboard.aspx.designer.cs">
+      <DependentUpon>Student_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student_Exam.aspx.cs">
+      <DependentUpon>Student_Exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student_Exam.aspx.designer.cs">
+      <DependentUpon>Student_Exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student_Profile.aspx.cs">
+      <DependentUpon>Student_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student_Profile.aspx.designer.cs">
+      <DependentUpon>Student_Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -544,11 +640,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Learner Images\" />
+    <Folder Include="Trainer Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Student\Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -6,11 +6,11 @@
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <li><a href="Default.aspx"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
-            <li class="active-bre"><a href="#"> Add new Teacher</a>
+            <li class="active-bre"><a href="admin_add_teacher.aspx"> Add new Trainer</a>
             </li>
-            <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            <li class="page-back"><a href="Default.aspx"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
             </li>
         </ul>
     </div>
@@ -21,57 +21,52 @@
             <div class="col-md-12">
                 <div class="box-inn-sp admin-form">
                     <div class="inn-title">
-                        <h4>Add New Teacher Informations</h4>                        
+                        <h4>Add New Trainer Informations</h4>                        
                     </div>
                     <div class="tab-inn">
-                        <form>
+                        <form id="form1" runat="server">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate" required>
-                                    <label class="">First name</label>
+                                     <asp:TextBox ID="textfirst_name"  class="validate" runat="server" placeholder="First Name"></asp:TextBox>   
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate" required>
-                                    <label class="">Last name</label>
+                                   <asp:TextBox ID="textlast_name"  class="validate" runat="server" placeholder="Last Name"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="number" value="" class="validate" required>
-                                    <label class="">Phone number</label>
+                                   <asp:TextBox ID="textphone_number"  class="validate" runat="server" placeholder="Phone Number" TextMode="Phone"></asp:TextBox>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="email" class="validate" value="" required>
-                                    <label class="">Email is</label>
+                                    <asp:TextBox ID="textemail_id"  class="validate" runat="server" placeholder="Email Id" TextMode="Email"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate">
-                                    <label class="">City</label>
+                                    <asp:TextBox ID="textcity"  class="validate" runat="server" placeholder="City"></asp:TextBox>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate">
-                                    <label class="">Country</label>
+                                    <asp:TextBox ID="textcountry"  class="validate" runat="server" placeholder="Country"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s6">
-                                    <input type="password" value="" class="validate">
-                                    <label class="">Password</label>
+                               <div class="input-field col s6">
+                                   <asp:TextBox ID="textpassword"  class="validate" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="password" value="" class="validate">
-                                    <label class="">Confirm Password</label>
+                                    <asp:TextBox ID="textconfirm_password"  class="validate" runat="server" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
+                                <!-- <div class="input-field col s6">
+                                    <asp:TextBox ID="texttrainer_id"  class="validate" runat="server" placeholder="Trainer Id"></asp:TextBox>
+                                </div>-->
                                 <div class="input-field col s12">
-                                    <input type="text" value="" class="validate">
-                                    <label>Teacher id</label>
+                                     
+                                    <asp:FileUpload ID="FileUpload1" runat="server" BorderColor="White" />
                                 </div>
                             </div>
-                            <div class="row">
+                            <!--<div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">
                                         <span>File</span>
@@ -81,11 +76,15 @@
                                         <input class="file-path validate" type="text" placeholder="Profile image">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                            </div>-->
+                           <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="waves-effect waves-light btn-large waves-input-wrapper"><input
-                                            type="submit" class="waves-button-input"></i>
+                                    <div class="waves-effect waves-light btn-large waves-input-wrapper">
+                                       
+                                <asp:Button ID="submit" class="waves-button-input" runat="server" Text="submit" Font-Size="Medium" OnClick="submit_Click" />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>       
+
+                                    </div>
                                 </div>
                             </div>
                         </form>

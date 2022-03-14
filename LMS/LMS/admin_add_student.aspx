@@ -1,17 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="admin_add_student.aspx.cs" Inherits="LMS.admin_add_student" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+   
     <!--== BODY INNER CONTAINER ==-->
 <div class="sb2-2">
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <li><a href="Default.aspx"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
-            <li class="active-bre"><a href="#"> Add new student</a>
+            <li class="active-bre"><a href="admin_add_student.aspx"> Add new learner</a>
             </li>
-            <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            <li class="page-back"><a href="Default.aspx"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
             </li>
         </ul>
     </div>
@@ -22,73 +22,75 @@
             <div class="col-md-12">
                 <div class="box-inn-sp admin-form">
                     <div class="inn-title">
-                        <h4>Add New Student Informations</h4>
+                        <h4>Add New Learner Informations</h4>
                         <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password
                             and more</p>
                     </div>
                     <div class="tab-inn">
-                        <form>
+                       <form id="form1" runat="server">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate" required>
-                                    <label class="">First name</label>
+                                    <asp:TextBox ID="textfirst_name"  class="validate" runat="server" placeholder="First Name"></asp:TextBox>                           
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate" required>
-                                    <label class="">Last name</label>
+                                    <asp:TextBox ID="textlast_name"  class="validate" runat="server" placeholder="Last Name"></asp:TextBox>
+                                </div>
+               
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                   <asp:TextBox ID="textphone_number"  class="validate" runat="server" placeholder="Phone Number" TextMode="Phone"></asp:TextBox>
+                                </div>
+                                <div class="input-field col s6">
+                                    <asp:TextBox ID="textemail_id"  class="validate" runat="server" placeholder="Email Id" TextMode="Email"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="number" value="" class="validate" required>
-                                    <label class="">Phone number</label>
+                                    <asp:TextBox ID="textcity"  class="validate" runat="server" placeholder="City"></asp:TextBox>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="email" class="validate" value="" required>
-                                    <label class="">Email is</label>
+                                    <asp:TextBox ID="textcountry"  class="validate" runat="server" placeholder="Country"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate">
-                                    <label class="">City</label>
+                                   <asp:TextBox ID="textpassword"  class="validate" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="text" value="" class="validate">
-                                    <label class="">Country</label>
+                                    <asp:TextBox ID="textconfirm_password"  class="validate" runat="server" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s6">
-                                    <input type="password" value="" class="validate">
-                                    <label class="">Password</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input type="password" value="" class="validate">
-                                    <label class="">Confirm Password</label>
+                               
+                                <div class="input-field col s12">
+                                     
+                                    <asp:FileUpload ID="FileUpload2" runat="server" BorderColor="White" />
                                 </div>
                             </div>
+                          <!-- <div class="row">
+                                <div class="input-field col s12">
+                           <!--     <asp:Label ID="Label2" runat="server" class="input-field col s6 validate" Text="Profile Image"></asp:Label>
+                                <!--<div class="file-field input-field col s12">
+                                    <!--<div class="btn admin-upload-btn">
+                                       <span>Profile Image</span>
+                                       <!-- <input type="file">
+                                <asp:FileUpload ID="FileUpload1" runat="server" BorderColor="White" />
+                                    </div>
+                                    <!--<div class="file-path-wrapper">
+                                      
+                                   </div><asp:TextBox ID="textprofile_image"  class="validate" runat="server" placeholder="Profile Image"></asp:TextBox>
+                                </div>
+                            </div>-->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" value="" class="validate">
-                                    <label>Student id</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="file-field input-field col s12">
-                                    <div class="btn admin-upload-btn">
-                                        <span>File</span>
-                                        <input type="file">
+                                    <div class="waves-effect waves-light btn-large waves-input-wrapper">
+                                        <!--<input
+                                            type="submit" class="waves-button-input"></div>-->
+                                <asp:Button ID="submit" class="waves-button-input" runat="server" Text="submit" Font-Size="Medium" OnClick="submit_Click" />
+                                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
                                     </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Profile image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="waves-effect waves-light btn-large waves-input-wrapper"><input
-                                            type="submit" class="waves-button-input"></i>
                                 </div>
                             </div>
                         </form>
@@ -98,5 +100,5 @@
         </div>
     </div>
 </div>
-
+        
 </asp:Content>

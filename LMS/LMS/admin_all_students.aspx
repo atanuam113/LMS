@@ -7,11 +7,11 @@
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <li><a href="Default.aspx"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
-            <li class="active-bre"><a href="#"> Users(Students)</a>
+            <li class="active-bre"><a href="admin_all_students.aspx"> Users(Learnerss)</a>
             </li>
-            <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            <li class="page-back"><a href="Default.aspx"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
             </li>
         </ul>
     </div>
@@ -22,12 +22,33 @@
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4>Student Details</h4>
+                        <h4>Learner Details</h4>
                         <p>All about students like name, student id, phone, email, country, city and more</p>
                     </div>
                     <div class="tab-inn">
+                        
                         <div class="table-responsive table-desi">
-                            <table class="table table-hover">
+                            <form id="form1" runat="server">
+                                <div class="table table-hover">
+                     <asp:GridView ID="GridView1" runat="server" class="table table-hover" AutoGenerateColumns="false">
+                         <Columns>
+                             <asp:ImageField DataImageUrlField="l_pimage" HeaderText="Profile Image"></asp:ImageField>
+                             <asp:BoundField DataField="l_id" HeaderText="Learner Id" />
+                             <asp:BoundField DataField="f_name" HeaderText="First Name" />
+                             <asp:BoundField DataField="l_name" HeaderText="Last Name" />
+                             <asp:BoundField DataField="email_id" HeaderText="Email Id" />
+                             <asp:BoundField DataField="password" HeaderText="Password" />
+                             <asp:BoundField DataField="phone_no" HeaderText="Phone No." />
+                             <asp:BoundField DataField="city" HeaderText="City" />
+                             <asp:BoundField DataField="country" HeaderText="Country" />
+                             <asp:TemplateField>
+                                 <ItemTemplate>
+                                     <asp:Button ID="view" runat="server" class="ad-st-view" Text="view" />
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                     </asp:GridView>
+                           <!-- <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>User</th>
@@ -58,13 +79,14 @@
                                         <td><a href="/admin_student_details" class="ad-st-view">View</a></td>
                                     </tr>                                   
                                 </tbody>
-                            </table>
+                            </table>-->
                         </div>
+                                </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 </asp:Content>
