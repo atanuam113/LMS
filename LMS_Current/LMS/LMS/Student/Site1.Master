@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="LMS.Student.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="Stylesheet" href="../Content/style.css" type="text/css" />
+    <link rel="Stylesheet" href="../Content/style-mob.css" type="text/css" />
+    <link rel="Stylesheet" href="../Content/materialize.css" type="text/css" />
+    <link rel="Stylesheet" href="../Content/font-awesome.min.css" type="text/css" />
+    <link rel="Stylesheet" href="../Content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../Content/custom.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+        <%--All js file--%>
+        <script src="../Scripts/LMS/custom.js" type="text/javascript"></script>
+        <script src="../Scripts/LMS/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../Scripts/WebForms/main.min.js" type="text/javascript"></script>
+        <script src="../Scripts/WebForms/materialize.min.js" type="text/javascript"></script>
+        
+        <section> 
+            <div class="container-fluid sb1">
+        <div class="row">                       
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='waves-effect btn-noti' href="Index.aspx">Home</a>                    
+                </div>
+            </div>
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='waves-effect btn-noti' href="All_Course.aspx">All Courses</a>                    
+                </div>
+            </div>
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='waves-effect btn-noti' href="All_Events.aspx">All Events</a>                    
+                </div>
+            </div>
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='waves-effect btn-noti' href="Student_Dashboard.aspx">My profile</a>                    
+                </div>
+            </div>
+            <!--== NOTIFICATION ==-->
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='waves-effect btn-noti' href="/admin_notification"><i class="material-icons" style="font-size:18px">&#xe7f4;</i></a>
+                </div>
+            </div>
+            <div class="col-md-2 tab-hide">
+                <div class="top-not-cen">            
+                    <a class='dropdown-button ' href='#'
+                                            data-activates='top-menu'><img class="userprofile"
+                                                src="../fonts/images/user.jpg" alt="" />  Atanu <i
+                                                style="font-size:13px" class="fa">&#xf107;</i>
+                                        </a>
+                </div>
+            </div>
+            <!--== MY ACCCOUNT ==-->
+            <%--<ul>                                       
+
+            <li>--%>
+                                    <!--== MY ACCCOUNT ==-->
+                                    <!-- <div class="col-md-2 col-sm-2 col-xs-4"> -->
+                                        <!-- Dropdown Trigger -->
+                                        <%--<a class='dropdown-button ' href='#'
+                                            data-activates='top-menu'><img class="userprofile"
+                                                src="../fonts/images/user.jpg" alt="" />  Atanu <i
+                                                style="font-size:13px" class="fa">&#xf107;</i>
+                                        </a>--%>
+
+                                        <!-- Dropdown Structure -->
+                                        <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                                            <li><a href="#" class="waves-effect"><i
+                                                        class="fa fa-cogs" aria-hidden="true"></i>Account Setting</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" class="ho-dr-con-last waves-effect"><i
+                                                        class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                                            </li>
+                                        </ul>
+                                    <!-- </div> -->
+                                <%--</li>        
+                </ul>--%>
+            </div>
+    </div>
+            <!-- LOGO AND MENU SECTION -->
+        <%--<div class="top-logo" data-spy="affix" data-offset-top="250">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wed-logo">
+                           <a href="#"><img src="{% static 'Edu_Master/images/logo.png' %}" alt="" />
+                            </a>
+                        </div>
+                        <div class="main-menu">
+                            <ul>
+                                <li><a href="Index.aspx">Home</a>
+                                </li>
+                                
+                                
+                                <li><a href="All_Course.aspx">All Courses</a></li>
+                                
+                                <li><a href="All_Events.aspx">All Events</a>
+                                </li>
+                                <li><a href="Student_Dashboard.aspx">My profile</a>
+                                </li>
+                                <%--<li><a href="#">Contact us</a>
+                                </li>
+                                <li>                                   
+                                    <div class="top-not-cen">            
+                                        <a  href="/admin_notification"><i class="material-icons" style="font-size:18px">&#xe7f4;</i></a>
+                                    </div>            
+                                </li>
+                                <li>
+                                    <!--== MY ACCCOUNT ==-->
+                                    <!-- <div class="col-md-2 col-sm-3 col-xs-4"> -->
+                                        <!-- Dropdown Trigger -->
+                                        <a class='dropdown-button ' href='#'
+                                            data-activates='top-menu'><img class="userprofile"
+                                                src="../fonts/images/user.jpg" alt="" />  Atanu <i
+                                                style="font-size:13px" class="fa">&#xf107;</i>
+                                        </a>
+
+                                        <!-- Dropdown Structure -->
+                                        <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                                            <li><a href="#" class="waves-effect"><i
+                                                        class="fa fa-cogs" aria-hidden="true"></i>Account Setting</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" class="ho-dr-con-last waves-effect"><i
+                                                        class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                                            </li>
+                                        </ul>
+                                    <!-- </div> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="all-drop-down-menu"></div>
+                </div>
+            </div>
+        </div>--%>
+
+        <!-- Search bar -->
+        <div class="search-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="search-form">
+                            <form>
+                                <div class="sf-type">
+                                    <div class="sf-input">
+                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                    </div>
+                                    <div class="sf-list">
+                                        <ul>
+                                            <li><a href="#">Accounting/Finance</a></li>
+                                            <li><a href="#">civil engineering</a></li>
+                                            <li><a href="#">Art/Design</a></li>
+                                            <li><a href="#">Marine Engineering</a></li>
+                                            <li><a href="#">Business Management</a></li>
+                                            <li><a href="#">Journalism/Writing</a></li>
+                                            <li><a href="#">Physical Education</a></li>
+                                            <li><a href="#">Political Science</a></li>
+                                            <li><a href="#">Sciences</a></li>
+                                            <li><a href="#">Statistics</a></li>
+                                            <li><a href="#">Web Design/Development</a></li>
+                                            <li><a href="#">SEO</a></li>
+                                            <li><a href="#">Google Business</a></li>
+                                            <li><a href="#">Graphics Design</a></li>
+                                            <li><a href="#">Networking Courses</a></li>
+                                            <li><a href="#">Information technology</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sf-submit">
+                                    <input type="submit" value="Search Course">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <%--Main section--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    <!-- FOOTER -->
+    <section class="wed-hom-footer">
+        <div class="container">
+            <div class="row wed-foot-link">
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Top Courses</h4>
+                    <ul>
+                        <li><a href="#">Accounting/Finance</a></li>
+                        <li><a href="#">civil engineering</a></li>
+                        <li><a href="#">Art/Design</a></li>
+                        <li><a href="#">Marine Engineering</a></li>
+                        <li><a href="#">Business Management</a></li>
+                        <li><a href="#">Journalism/Writing</a></li>
+                        <li><a href="#">Physical Education</a></li>
+                        <li><a href="#">Political Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>New Courses</h4>
+                    <ul>
+                        <li><a href="#">Sciences</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">Web Design/Development</a></li>
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Google Business</a></li>
+                        <li><a href="#">Graphics Design</a></li>
+                        <li><a href="#">Networking Courses</a></li>
+                        <li><a href="#">Information technology</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>HELP & SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">24x7 Live help</a>
+                        </li>
+                        <li><a href="#">Contact us</a>
+                        </li>
+                        <li><a href="#">Feedback</a>
+                        </li>
+                        <li><a href="#">FAQs</a>
+                        </li>
+                        <li><a href="#">Safety Tips</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row wed-foot-link-1">
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Get In Touch</h4>
+                    <p>Address: </p>
+                    <p>Phone: <a href="#!"></a></p>
+                    <p>Email: <a href="#!"></a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
+                    <ul>
+                        <li><a href="#"><span class="sprite sprite-android"></span></a>
+                        </li>
+                        <%--<li><a href="#"><span class="sprite sprite-ios"></span></a>
+                        </li>--%>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,219 @@
+E:\DOT_NET Projects\LMS\LMS\bin\LMS.dll.config
+E:\DOT_NET Projects\LMS\LMS\bin\LMS.dll
+E:\DOT_NET Projects\LMS\LMS\bin\LMS.pdb
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csc.exe
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csc.exe.config
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csc.rsp
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csi.exe
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csi.exe.config
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\csi.rsp
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.Managed.Core.targets
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.AppContext.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Collections.Immutable.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Console.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Globalization.Calendars.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.IO.Compression.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.IO.FileSystem.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Net.Http.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Net.Sockets.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.ValueTuple.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Xml.XmlDocument.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Xml.XPath.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\vbc.exe
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\vbc.exe.config
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\vbc.rsp
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\VBCSCompiler.exe
+E:\DOT_NET Projects\LMS\LMS\bin\roslyn\VBCSCompiler.exe.config
+E:\DOT_NET Projects\LMS\LMS\bin\Antlr3.Runtime.dll
+E:\DOT_NET Projects\LMS\LMS\bin\AspNet.ScriptManager.bootstrap.dll
+E:\DOT_NET Projects\LMS\LMS\bin\AspNet.ScriptManager.jQuery.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.ScriptManager.WebForms.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.Web.Infrastructure.dll
+E:\DOT_NET Projects\LMS\LMS\bin\Newtonsoft.Json.dll
+E:\DOT_NET Projects\LMS\LMS\bin\System.Web.Optimization.dll
+E:\DOT_NET Projects\LMS\LMS\bin\WebGrease.dll
+E:\DOT_NET Projects\LMS\LMS\bin\System.Web.Optimization.xml
+E:\DOT_NET Projects\LMS\LMS\bin\Newtonsoft.Json.xml
+E:\DOT_NET Projects\LMS\LMS\bin\Antlr3.Runtime.pdb
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\DOT_NET Projects\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DOT_NET Projects\LMS\LMS\obj\Debug\LMS.csproj.AssemblyReference.cache
+E:\DOT_NET Projects\LMS\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
+E:\DOT_NET Projects\LMS\LMS\obj\Debug\LMS.dll
+E:\DOT_NET Projects\LMS\LMS\obj\Debug\LMS.pdb
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\LMS.dll.config
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\LMS.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\LMS.pdb
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csc.exe
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csc.exe.config
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csc.rsp
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csi.exe
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csi.exe.config
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\csi.rsp
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.Managed.Core.targets
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.AppContext.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Collections.Immutable.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Console.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Globalization.Calendars.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.IO.Compression.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.IO.FileSystem.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Net.Http.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Net.Sockets.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Reflection.Metadata.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.ValueTuple.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Xml.XmlDocument.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Xml.XPath.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\vbc.exe
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\vbc.exe.config
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\vbc.rsp
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\VBCSCompiler.exe
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\roslyn\VBCSCompiler.exe.config
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Antlr3.Runtime.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\AspNet.ScriptManager.bootstrap.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\AspNet.ScriptManager.jQuery.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.ScriptManager.MSAjax.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.ScriptManager.WebForms.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.Web.Infrastructure.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Newtonsoft.Json.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\System.Web.Optimization.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\WebGrease.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\System.Web.Optimization.xml
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Newtonsoft.Json.xml
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Antlr3.Runtime.pdb
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.xml
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\obj\Debug\LMS.csproj.AssemblyReference.cache
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\obj\Debug\LMS.dll
+G:\IECSL\LMS-master\LMS-master\LMS\LMS\obj\Debug\LMS.pdb
+E:\LMS-Project-master\LMS\LMS\bin\LMS.dll.config
+E:\LMS-Project-master\LMS\LMS\bin\LMS.dll
+E:\LMS-Project-master\LMS\LMS\bin\LMS.pdb
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csc.exe
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csc.exe.config
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csc.rsp
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csi.exe
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csi.exe.config
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\csi.rsp
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.Managed.Core.targets
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.AppContext.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Collections.Immutable.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Console.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Globalization.Calendars.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.IO.Compression.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.IO.FileSystem.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Net.Http.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Net.Sockets.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.ValueTuple.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Xml.XmlDocument.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Xml.XPath.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\vbc.exe
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\vbc.exe.config
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\vbc.rsp
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\VBCSCompiler.exe
+E:\LMS-Project-master\LMS\LMS\bin\roslyn\VBCSCompiler.exe.config
+E:\LMS-Project-master\LMS\LMS\bin\Antlr3.Runtime.dll
+E:\LMS-Project-master\LMS\LMS\bin\AspNet.ScriptManager.bootstrap.dll
+E:\LMS-Project-master\LMS\LMS\bin\AspNet.ScriptManager.jQuery.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.ScriptManager.WebForms.dll
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.Web.Infrastructure.dll
+E:\LMS-Project-master\LMS\LMS\bin\Newtonsoft.Json.dll
+E:\LMS-Project-master\LMS\LMS\bin\System.Web.Optimization.dll
+E:\LMS-Project-master\LMS\LMS\bin\WebGrease.dll
+E:\LMS-Project-master\LMS\LMS\bin\System.Web.Optimization.xml
+E:\LMS-Project-master\LMS\LMS\bin\Newtonsoft.Json.xml
+E:\LMS-Project-master\LMS\LMS\bin\Antlr3.Runtime.pdb
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\LMS-Project-master\LMS\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\LMS-Project-master\LMS\LMS\obj\Debug\LMS.csproj.AssemblyReference.cache
+E:\LMS-Project-master\LMS\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
+E:\LMS-Project-master\LMS\LMS\obj\Debug\LMS.dll
+E:\LMS-Project-master\LMS\LMS\obj\Debug\LMS.pdb
