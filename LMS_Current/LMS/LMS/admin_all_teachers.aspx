@@ -30,7 +30,7 @@
                                         <asp:GridView ID="GridView1" runat="server" class="table table-hover" AutoGenerateColumns="false" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                                             <HeaderStyle Font-Bold="true" Font-Size="Medium" BackColor="#9999FF" />
                                             <Columns>
-                                                <asp:ImageField DataImageUrlField="t_pimage" HeaderText="Profile Image"></asp:ImageField>
+                                                <asp:ImageField DataImageUrlField="t_pimage" HeaderText="Profile Image" ItemStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
                                                 <asp:BoundField DataField="trainer_id" HeaderText="Trainer Id" />
                                                 <asp:BoundField DataField="f_name" HeaderText="First Name" />
                                                 <asp:BoundField DataField="l_name" HeaderText="Last Name" />

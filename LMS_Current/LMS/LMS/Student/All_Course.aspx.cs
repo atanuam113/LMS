@@ -31,5 +31,14 @@ namespace LMS.Student
             con.Close();
 
         }
+
+        protected void cdetailspage_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            string courseid = btn.CommandArgument;
+            Session["course_id"] = courseid;
+            Response.Redirect("course_details.aspx");
+
+        }
     }
 }

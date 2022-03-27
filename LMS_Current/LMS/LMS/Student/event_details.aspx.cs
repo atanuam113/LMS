@@ -12,33 +12,33 @@ namespace LMS.Student
     public partial class event_details : System.Web.UI.Page
     {
         //Atanu's string
-        //string connectionString = @"Data Source=DESKTOP-539AVIS\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-539AVIS\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True";
         //Nabonita's string
         //string connectionString = @"Data Source=DESKTOP-KAEBEC0\\SQLEXPRESS;Initial Catalog=LMS Project;Integrated Security=True";       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["eventid"] != null)
-            //{
-            //    string eventid = Session["eventid"].ToString();
-            //    int eid = Int32.Parse(eventid);
-            //    SqlConnection con = new SqlConnection(connectionString);
-            //    con.Open();
-            //    SqlCommand cmd = new SqlCommand("select * from eventsDtl where id=@e_id", con);
-            //    cmd.Parameters.AddWithValue("@e_id", eid);
-            //    cmd.ExecuteNonQuery();
+            if (Session["event_detils_id"] != null)
+            {
+                string eventid = Session["event_detils_id"].ToString();
+                //int eid = Int32.Parse(eventid);
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select * from eventsDtl where e_id=@e_id", con);
+                cmd.Parameters.AddWithValue("@e_id", eventid);
+                cmd.ExecuteNonQuery();
 
-            //    DataTable dt = new DataTable();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(dt);
-            //    datalist1.DataSource = dt;
-            //    datalist1.DataBind();
-            //    con.Close();
-            //}
-            //else
-            //{
-            //    Response.Redirect("Student_Dashboard.aspx");
-            //}
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                eventdetails.DataSource = dt;
+                eventdetails.DataBind();
+                con.Close();
+            }
+            else
+            {
+                Response.Redirect("Student_Dashboard.aspx");
+            }
         }
     }
 }

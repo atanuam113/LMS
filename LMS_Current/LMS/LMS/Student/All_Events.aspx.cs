@@ -30,22 +30,22 @@ namespace LMS.Student
             datalist1.DataBind();
             con.Close();
 
+        }      
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            string eventid = btn.CommandArgument;
+            Session["event_detils_id"] = eventid;
+            Response.Redirect("event_details.aspx");
         }
 
-        protected void datalist1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void txtregister_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        protected void datalist1_ItemCommand(object source, DataListCommandEventArgs e)
-        {
-            //LinkButton lnkid = (LinkButton)e.Item.FindControl("id");
-            //int eventid = Int16.Parse(lnkid.Text);
-            //Session["eventid"] = eventid;
-            if (e.CommandName == "eventdetails")
-            {
-                Response.Redirect("event_details.aspx?id=" + e.CommandArgument.ToString());
-            }
+            LinkButton btn = (LinkButton)sender;
+            string eventid = btn.CommandArgument;
+            Session["event_register_id"] = eventid;
+            Response.Redirect("event_register.aspx");
         }
     }
 }

@@ -13,29 +13,7 @@
                         <div class="con-title">
                             <h2>College <span>Events</span></h2>
                         </div>
-                        <div>
-                            <%--<div class="ho-event pg-eve-main">
-                                
-                                <ul>
-                                    
-                                    <li>
-                                        <div class="ho-ev-date pg-eve-date">
-                                            <span>07</span><span>jan,2022</span>
-                                        </div>
-                                        <div class="ho-ev-link pg-eve-desc">
-                                            <a href="event_register.aspx">
-                                                <h4>Latinoo College Expo 2022 - DONATION</h4>
-                                            </a>
-                                            <p>Campus of MAKAUT,Kolkata,West Bengal,India.</p>
-                                            <span>9:15 am – 5:00 pm</span>
-                                        </div>
-                                        <div class="pg-eve-reg">
-                                            <a href="event_register.aspx">Register</a><a href="event_details.aspx">Read more</a>
-                                        </div>
-                                    </li>
-                                    
-                                </ul>
-                            </div>--%>
+                        <div>                         
                         </div>
                         <div class="row">
                 <div class="col-md-12">
@@ -60,7 +38,7 @@
                                             </tr>
                                         </thead>
 
-                                        <asp:DataList runat="server" ID="datalist1" OnSelectedIndexChanged="datalist1_SelectedIndexChanged" OnItemCommand="datalist1_ItemCommand">
+                                        <asp:DataList runat="server" ID="datalist1" CssClass="col-md-11">
                                             <ItemTemplate>
                                                 <tbody>
                                                     <tr>
@@ -72,9 +50,10 @@
                                                         <td><%#Eval("e_name") %></td>
                                                         <td><%#Eval("e_date") %></td>
                                                         <td><%#Eval("city") %></td>
-                                                        
-                                                        <td><asp:Button runat="server" ID="txtregister" Text="Register" CommandName="eventregister" CommandArgument='<%#Eval("id") %>' /></td>
-                                                        <td><asp:Button runat="server" ID="Button1" Text="Read more" CommandName="eventdetails" CommandArgument='<%#Eval("id") %>' /></td>
+                                                        <div class="pg-eve-reg">
+                                                        <td><asp:LinkButton runat="server" ID="txtregister" Text="Register" CommandName="eventregister" OnClick="txtregister_Click" CommandArgument='<%#Eval("e_id") %>' /></td>
+                                                        <td><asp:LinkButton runat="server" ID="Button1" Text="Read more" CommandName="eventdetails" OnClick="Button1_Click" CommandArgument='<%#Eval("e_id") %>' /></td>
+                                                        </div>
                                                     </tr>
 
                                                 </tbody>
