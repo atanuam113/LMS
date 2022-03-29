@@ -18,13 +18,20 @@ namespace LMS.Student
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            EventDetails_page();
+            eventregisterFcn();
+        }
+
+        private void EventDetails_page()
+        {
             if (Session["event_register_id"] != null)
             {
-                string eventid = Session["event_register_id"].ToString();                
+                string eventid = Session["event_register_id"].ToString();
+                int e_id = Int32.Parse(eventid);
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select * from eventsDtl where e_id=@e_id", con);
-                cmd.Parameters.AddWithValue("@e_id", eventid);
+                SqlCommand cmd = new SqlCommand("select * from eventsDtl where id=@e_id", con);
+                cmd.Parameters.AddWithValue("@e_id", e_id);
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -32,17 +39,12 @@ namespace LMS.Student
                 da.Fill(dt);
                 eventregister.DataSource = dt;
                 eventregister.DataBind();
-                con.Close();
-                eventregisterFcn();
-
-
-
+                con.Close();                
             }
             else
             {
                 Response.Redirect("Student_Dashboard.aspx");
-            }            
-
+            }
         }
 
         private void eventregisterFcn()
@@ -67,41 +69,50 @@ namespace LMS.Student
 
         protected void event_register_Click(object sender, EventArgs e)
         {
-            string Learner_id = Session["USER_ID"].ToString();
-            string Event_id = Session["event_register_id"].ToString();
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from event_register_details where Learner_id=@Learner_id and Event_id=@Event_id", con);
-            cmd.Parameters.AddWithValue("@Learner_id", Learner_id);
-            cmd.Parameters.AddWithValue("@Event_id", Event_id);
-            int tmp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            con.Close();
-            if(tmp == 1)
+            if (Session["event_register_id"] != null && Session["USER_ID"] != null)
             {
-                event_reg_msg.ForeColor = System.Drawing.Color.Red;
-                event_reg_msg.Text = "You already registered in this event....";
-            }
-            else
-            {
-                if(Session["USER_ID"] != null && Session["event_register_id"] != null)
+                string eventid = Session["event_register_id"].ToString();
+                int e_id = Int32.Parse(eventid);
+                string useremail = Session["USER_ID"].ToString();
+
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+
+                SqlCommand learner_id = new SqlCommand("select learner_id from learnerDtl where email_id='" + useremail + "'", con);
+                string result = (string)learner_id.ExecuteScalar();
+
+                SqlCommand NoOfRecords = new SqlCommand("select COUNT(*) from event_register_details where learner_id='" + result + "' and Event_id='" + e_id + "'", con);               
+                int tmp = Convert.ToInt32(NoOfRecords.ExecuteScalar().ToString());
+
+                if (tmp == 1)
                 {
-                    string L_ID = Session["USER_ID"].ToString();
-                    string E_id = Session["event_register_id"].ToString();
-                    con.Open();
-                    SqlCommand sqlcmd = new SqlCommand("insert into event_register_details (Learner_id,Event_id,Register_date) values (@L_ID,@E_id,@e_date)", con);
-                    cmd.Parameters.AddWithValue("@L_ID", L_ID);
-                    cmd.Parameters.AddWithValue("@E_id", E_id);
-                    cmd.Parameters.AddWithValue("@e_date", DateTime.Now.ToString("yyyy-M-d"));
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    //Session["USER_ID"] = null;
-                    Session["event_register_id"] = null;
-                    Response.Redirect("Student_Dashboard.aspx");
+                    event_reg_msg.Text = "You already registered for this course";
+                    event_reg_msg.ForeColor = System.Drawing.Color.Red;
                 }
-                
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into event_register_details (learner_id,Event_id,Reg_Date) values (@learner_id,@Event_id,@Reg_Date)", con);
+                    cmd.Parameters.AddWithValue("@learner_id", result);
+                    cmd.Parameters.AddWithValue("@Event_id", e_id);
+                    cmd.Parameters.AddWithValue("@Reg_Date", DateTime.Today);
+                    int i = cmd.ExecuteNonQuery();
+
+                    if (i != 0)
+                    {
+                        Response.Redirect("Index.aspx");
+                    }
+                    else
+                    {
+                        event_reg_msg.Text = "Can't register for the course.";
+                    }
+                }
+
+                con.Close();
+                Session["event_register_id"] = null;
+                Response.Redirect("Student_Dashboard.aspx");
             }
-
-
-        }
+            
+        }        
+    
     }
 }

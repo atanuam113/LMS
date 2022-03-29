@@ -36,6 +36,10 @@ namespace LMS.Student
                 con.Close();
 
             }
+            else
+            {
+                std_profile.Text = "None";
+            }
 
         }
     }

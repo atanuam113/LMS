@@ -2,6 +2,14 @@
 {
 
 }
+.item_img {
+    height: 40px;
+    width: 41px;
+    border-radius: 50%;
+}
+.error_msg {
+    font-size: large;
+}
 body {
     font-family: 'Open Sans', sans-serif;
     padding-right: 0px !important;

@@ -51,7 +51,7 @@
                                                         <td><%#Eval("e_date") %></td>
                                                         <td><%#Eval("city") %></td>
                                                         <div class="pg-eve-reg">
-                                                        <td><asp:LinkButton runat="server" ID="txtregister" Text="Register" CommandName="eventregister" OnClick="txtregister_Click" CommandArgument='<%#Eval("e_id") %>' /></td>
+                                                        <td><asp:LinkButton runat="server" ID="txtregister" Text="Register" CommandName="eventregister" OnClick="txtregister_Click" CommandArgument='<%#Eval("id") %>' /></td>
                                                         <td><asp:LinkButton runat="server" ID="Button1" Text="Read more" CommandName="eventdetails" OnClick="Button1_Click" CommandArgument='<%#Eval("e_id") %>' /></td>
                                                         </div>
                                                     </tr>

@@ -11,7 +11,14 @@ namespace LMS.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["USER_ID"] == null)
+            {
+                Response.Redirect("../HomePage.aspx");
+            }
+            //else
+            //{
+            //    Response.Redirect("Index.aspx");
+            //}
         }
 
         protected void logout_Click(object sender, EventArgs e)

@@ -100,6 +100,7 @@
           </ItemTemplate>
       </asp:DataList>    
           </div>
+        <asp:Label runat="server" ID="std_profile"></asp:Label>
     </div>
                
 </section>

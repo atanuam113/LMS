@@ -33,7 +33,7 @@
                                             <HeaderStyle Font-Bold="true" Font-Size="Medium" BackColor="#9999FF" />
                                             <Columns>
 
-                                                <asp:ImageField DataImageUrlField="l_pimage" HeaderText="Profile Image"></asp:ImageField>
+                                                <asp:ImageField DataImageUrlField="l_pimage" HeaderText="Profile Image" ItemStyle-CssClass="item_img"></asp:ImageField>
                                                 <asp:BoundField DataField="learner_id" HeaderText="LEARNER ID" />
                                                 <asp:BoundField DataField="f_name" HeaderText="FIRST NAME" />
                                                 <asp:BoundField DataField="l_name" HeaderText="LAST NAME" />
