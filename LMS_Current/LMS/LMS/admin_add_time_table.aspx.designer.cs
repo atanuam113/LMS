@@ -7,38 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LMS.Student
+namespace LMS
 {
 
 
-    public partial class Student_Course
+    public partial class admin_add_time_table
     {
 
         /// <summary>
-        /// profile_details control.
+        /// ddteacher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList profile_details;
+        protected global::System.Web.UI.WebControls.DropDownList ddteacher;
 
         /// <summary>
-        /// std_course control.
+        /// newtimetable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList std_course;
+        protected global::System.Web.UI.WebControls.GridView newtimetable;
 
         /// <summary>
-        /// course_tbl control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList course_tbl;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

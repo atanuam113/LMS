@@ -40,5 +40,6 @@ namespace LMS.Student
             Response.Redirect("course_details.aspx");
 
         }
+    
     }
 }

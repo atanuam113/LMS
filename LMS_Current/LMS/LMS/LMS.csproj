@@ -105,12 +105,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="admin_add_course.aspx" />
     <Content Include="admin_add_event.aspx" />
     <Content Include="admin_add_exam.aspx" />
+    <Content Include="admin_add_module.aspx" />
     <Content Include="admin_add_student.aspx" />
     <Content Include="admin_add_teacher.aspx" />
+    <Content Include="admin_add_time_table.aspx" />
     <Content Include="admin_admission_enquiry.aspx" />
     <Content Include="admin_all_course.aspx" />
     <Content Include="admin_all_enquiry.aspx" />
@@ -351,6 +352,8 @@
     <Content Include="Student\event_details.aspx" />
     <Content Include="Student\event_register.aspx" />
     <Content Include="Student\Index.aspx" />
+    <Content Include="Student\my_courses.aspx" />
+    <Content Include="Student\my_events.aspx" />
     <Content Include="Student\Student_Class_Time.aspx" />
     <Content Include="Student\Student_Course.aspx" />
     <Content Include="Student\Student_Dashboard.aspx" />
@@ -390,6 +393,13 @@
     <Compile Include="admin_add_exam.aspx.designer.cs">
       <DependentUpon>admin_add_exam.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin_add_module.aspx.cs">
+      <DependentUpon>admin_add_module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_add_module.aspx.designer.cs">
+      <DependentUpon>admin_add_module.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin_add_student.aspx.cs">
       <DependentUpon>admin_add_student.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -403,6 +413,13 @@
     </Compile>
     <Compile Include="admin_add_teacher.aspx.designer.cs">
       <DependentUpon>admin_add_teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_add_time_table.aspx.cs">
+      <DependentUpon>admin_add_time_table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_add_time_table.aspx.designer.cs">
+      <DependentUpon>admin_add_time_table.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin_admission_enquiry.aspx.cs">
       <DependentUpon>admin_admission_enquiry.aspx</DependentUpon>
@@ -524,13 +541,6 @@
       <DependentUpon>admin_teacher_enquiry.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -612,6 +622,20 @@
     </Compile>
     <Compile Include="Student\event_register.aspx.designer.cs">
       <DependentUpon>event_register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\my_courses.aspx.cs">
+      <DependentUpon>my_courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\my_courses.aspx.designer.cs">
+      <DependentUpon>my_courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\my_events.aspx.cs">
+      <DependentUpon>my_events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\my_events.aspx.designer.cs">
+      <DependentUpon>my_events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -729,6 +753,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Course_Banner\" />
+    <Folder Include="Course_Video\" />
     <Folder Include="event_image\" />
     <Folder Include="Learner_Images\" />
     <Folder Include="Trainer_Images\" />

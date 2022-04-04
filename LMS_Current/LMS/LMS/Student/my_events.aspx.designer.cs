@@ -11,34 +11,25 @@ namespace LMS.Student
 {
 
 
-    public partial class Student_Course
+    public partial class my_events
     {
 
         /// <summary>
-        /// profile_details control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList profile_details;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// std_course control.
+        /// datalist1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList std_course;
-
-        /// <summary>
-        /// course_tbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList course_tbl;
+        protected global::System.Web.UI.WebControls.DataList datalist1;
     }
 }

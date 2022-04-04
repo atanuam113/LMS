@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace LMS.Student
 {
-    public partial class Student_Exam : System.Web.UI.Page
+    public partial class my_courses : System.Web.UI.Page
     {
         //Atanu's string
         string connectionString = @"Data Source=DESKTOP-539AVIS\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True";
@@ -18,11 +18,9 @@ namespace LMS.Student
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Profiledetails();
-            ExamTimeTable();
+            Registered_Course();
         }
-
-        private void ExamTimeTable()
+        private void Registered_Course()
         {
             if (Session["USER_ID"] != null)
             {
@@ -34,42 +32,32 @@ namespace LMS.Student
                 SqlCommand learner_id = new SqlCommand("select learner_id from learnerDtl where email_id='" + useremail + "'", con);
                 string result = (string)learner_id.ExecuteScalar();
 
+
+                //SqlCommand course_id_list = new SqlCommand("select Course_ID from course_register_details where learner_id='" + result + "'", con);
+                //int c_id_array = (int)course_id_list.ExecuteScalar();
+
                 SqlCommand course_id_list = new SqlCommand("declare @tmp varchar(250) SET @tmp = '' select @tmp = @tmp + cast(Course_ID as Varchar) + ',' from course_register_details where learner_id='" + result + "' select SUBSTRING(@tmp, 0, LEN(@tmp))", con);
                 String c_id_array = (String)course_id_list.ExecuteScalar();
 
-                SqlCommand coursedetails = new SqlCommand("select * from examDtl where e_course IN(" + c_id_array + ")", con);
+                SqlCommand coursedetails = new SqlCommand("select * from CourseDetails where Course_ID IN(" + c_id_array + ")", con);
                 coursedetails.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(coursedetails);
                 da.Fill(dt);
-                ExamTime.DataSource = dt;
-                ExamTime.DataBind();
+                mycourse.DataSource = dt;
+                mycourse.DataBind();
                 con.Close();
             }
+
         }
 
-        private void Profiledetails()
+        protected void txtallcrs_Click(object sender, EventArgs e)
         {
-            if (Session["USER_ID"] != null)
-            {
-                string userid = Session["USER_ID"].ToString();
-                SqlConnection con = new SqlConnection(connectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("select * from learnerDtl where email_id='" + userid + "'", con);
-                cmd.ExecuteNonQuery();
-
-                //con.Open();
-
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                sda.Fill(ds);
-                profile_details.DataSource = ds;
-                profile_details.DataBind();
-                con.Close();
-
-            }
+            LinkButton btn = (LinkButton)sender;
+            string courseid = btn.CommandArgument;
+            Session["course_id"] = courseid;
+            Response.Redirect("course_details.aspx");
         }
-
     }
 }

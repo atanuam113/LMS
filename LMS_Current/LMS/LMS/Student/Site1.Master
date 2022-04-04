@@ -29,7 +29,10 @@
         
         <section> 
             <div class="container-fluid sb1">
-        <div class="row">                       
+        <div class="row"> 
+            <ul>
+
+            </ul>
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
                     <a class='waves-effect btn-noti' href="Index.aspx">Home</a>                    
@@ -37,19 +40,36 @@
             </div>
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
-                    <a class='waves-effect btn-noti' href="All_Course.aspx">All Courses</a>                    
+                    <a class='waves-effect btn-noti dropdown-button' data-activates='All-courses' href="All_Course.aspx">Courses</a>                    
                 </div>
             </div>
+            <ul id='All-courses' class='dropdown-content top-menu-sty'>
+                                            
+                    <li><a href="All_Course.aspx" class="waves-effect">All Courses</a>
+                    </li>
+                    <li><a href="my_courses.aspx" class="waves-effect">My Courses</a>
+                    </li>                    
+                                            
+                </ul>
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
-                    <a class='waves-effect btn-noti' href="All_Events.aspx">All Events</a>                    
+                    <a class='waves-effect btn-noti dropdown-button' data-activates='All-events'  href="All_Events.aspx">Events</a>                    
                 </div>
             </div>
+            <ul id='All-events' class='dropdown-content top-menu-sty'>
+                                            
+                    <li><a href="All_Events.aspx" class="waves-effect">All events</a>
+                    </li>
+                    <li><a href="my_events.aspx" class="waves-effect">My events</a>
+                    </li>                    
+                                            
+                </ul>
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
-                    <a class='waves-effect btn-noti' href="Student_Dashboard.aspx">My profile</a>                    
+                    <a class='waves-effect btn-noti ' href="Student_Dashboard.aspx">My profile</a>                    
                 </div>
             </div>
+
             <!--== NOTIFICATION ==-->
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
@@ -58,43 +78,28 @@
             </div>
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">            
-                    <a class='dropdown-button ' href='#'
-                                            data-activates='top-menu'><img class="userprofile"
-                                                src="../fonts/images/user.jpg" alt="" />  Atanu <i
-                                                style="font-size:13px" class="fa">&#xf107;</i>
-                                        </a>
+                    <a class='dropdown-button' href='#' data-activates='top-menu'>
+                       <asp:Image runat="server" ID="t_pimage" CssClass="item_img" Height="50px" Width="50px"/>
+                    <asp:Label ID="lblsession" runat="server" Text="" ForeColor="White" Font-Bold="True" Font-Size="X-Large"></asp:Label>                
+                    </a>
                 </div>
             </div>
-            <!--== MY ACCCOUNT ==-->
-            <%--<ul>                                       
+            <!--== MY ACCCOUNT ==-->         
 
-            <li>--%>
-                                    <!--== MY ACCCOUNT ==-->
-                                    <!-- <div class="col-md-2 col-sm-2 col-xs-4"> -->
-                                        <!-- Dropdown Trigger -->
-                                        <%--<a class='dropdown-button ' href='#'
-                                            data-activates='top-menu'><img class="userprofile"
-                                                src="../fonts/images/user.jpg" alt="" />  Atanu <i
-                                                style="font-size:13px" class="fa">&#xf107;</i>
-                                        </a>--%>
-
-                                        <!-- Dropdown Structure -->
-                                        <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                <!-- Dropdown Structure -->
+                <ul id='top-menu' class='dropdown-content top-menu-sty'>
                                             
-                                            <li><a href="#" class="waves-effect"><i
-                                                        class="fa fa-cogs" aria-hidden="true"></i>Account Setting</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <%--<li><asp:LinkButton runat="server" ID="logout" OnClick="logout_Click"></asp:LinkButton></li>--%>
-                                            <li>
-                                                <asp:HyperLink ID ="logout" runat="server" CssClass="ho-dr-con-last waves-effect" NavigateUrl="~/HomePage.aspx"><i
-                                                        class="fa fa-sign-in" aria-hidden="true"></i> Logout</asp:HyperLink>
-                                            </li>
+                    <li><a href="#" class="waves-effect"><i
+                                class="fa fa-cogs" aria-hidden="true"></i>Account Setting</a>
+                    </li>
+                    <li class="divider"></li>                    
+                    <li>
+                        <asp:HyperLink ID ="logout" runat="server" CssClass="ho-dr-con-last waves-effect" NavigateUrl="~/HomePage.aspx"><i
+                                class="fa fa-sign-in" aria-hidden="true"></i> Logout</asp:HyperLink>
+                    </li>
                                             
-                                        </ul>
-                                    <!-- </div> -->
-                                <%--</li>        
-                </ul>--%>
+                </ul>
+                             
             </div>
     </div>
             <!-- LOGO AND MENU SECTION -->

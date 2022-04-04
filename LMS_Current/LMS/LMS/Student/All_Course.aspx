@@ -12,14 +12,12 @@
                     <h2>All <span>Courses</span></h2>
                 </div>
             </div>
-            <form runat="server">
-            <%--<div class="row">--%>
-                <%--<div class="col-md-6">--%>
+            <form runat="server">            
                     <div>
-                        <asp:DataList runat="server" ID ="allcourse">
-                            <ItemTemplate>
-                        <asp:LinkButton runat="server" ID="LinkButton2" OnClick="cdetailspage_Click" CommandName="txtallcrs" CommandArgument='<%#Eval("Course_ID") %>'>
-                        <div class="home-top-cour">
+                        <asp:DataList runat="server" ID ="allcourse" RepeatColumns="2" CellPadding="5" CssClass="item_course">
+                            <ItemTemplate>                        
+                        <div class="home-top-cour" style="padding:4px">
+                            <asp:LinkButton runat="server" ID="LinkButton2" OnClick="cdetailspage_Click" CommandName="txtallcrs" CommandArgument='<%#Eval("Course_ID") %>'>
                             <!--POPULAR COURSES IMAGE-->
                             <div class="col-md-3">
                                 <img src="<%#Eval("CourseBanner") %>" alt="">
@@ -28,7 +26,7 @@
                             <div class="col-md-9 home-top-cour-desc">                                
                                 <asp:LinkButton runat="server" ID="txtallcrs" OnClick="cdetailspage_Click" CommandName="txtallcrs" CommandArgument='<%#Eval("Course_ID") %>'><h3><%#Eval("Course_Name") %></h3></asp:LinkButton>
                                 <h4>Class Teacher is <%#Eval("Course_Trainer") %></h4>
-                                <p>Classes will start from <%#Eval("Course_Start_Date") %></p>
+                                <p>Classes will start from <%#Eval("Course_Start_Date", "{0:d}") %></p>
                                 <%--<span class="home-top-cour-rat">4.2</span>--%>
                                 <div class="hom-list-share">
                                     <ul>
@@ -40,109 +38,15 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>  
                             </asp:LinkButton>
+                        </div>  
+                            
                     </ItemTemplate>
                             </asp:DataList>
-                    </div>
-                <%--</div>--%>
-                <%--<div class="col-md-6">
-                    <div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3">
-                                <img src="../fonts/images/course/sm-5.jpg" alt="">
-                            </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="#">
-                                    <h3>Fashion Technology</h3>
-                                </a>
-                                <h4>Technology / Trends / Fashion</h4>
-                                <p>Classes started from coming friday(21 jun 2023)</p>
-                                <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Book Now</a> </li>
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3">
-                                <img src="../fonts/images/course/sm-6.jpg" alt="">
-                            </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="#">
-                                    <h3>Agriculture Courses</h3>
-                                </a>
-                                <h4>Technology / Space / Aerospace</h4>
-                                <p>Classes started from coming friday(21 jun 2023)</p>
-                                <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Book Now</a> </li>
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3">
-                                <img src="../fonts/images/course/sm-7.jpg" alt="">
-                            </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="#">
-                                    <h3>Marine Engineering</h3>
-                                </a>
-                                <h4>Technology / Ocean / Marine</h4>
-                                <p>Classes started from coming friday(21 jun 2023)</p>
-                                <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Book Now</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3">
-                                <img src="../fonts/images/course/sm-8.jpg" alt="">
-                            </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="#">
-                                    <h3>Building, Construction Management</h3>
-                                </a>
-                                <h4>Technology / Construction / Building</h4>
-                                <p>Classes started from coming friday(21 jun 2023)</p>
-                                <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Book Now</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
+                    </div>               
             </form>
-        </div>
-        <%--</div>--%>
+        </div>        
     </section>
-
     <!-- SECTION END -->
 
 

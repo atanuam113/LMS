@@ -2,6 +2,15 @@
 {
 
 }
+.item_course {
+    padding: 5px;
+    margin: 0px 0px 5px 0px;
+}
+.student_crs_img
+{
+    width: 450px;
+    height:200px;
+}
 .item_img {
     height: 40px;
     width: 41px;

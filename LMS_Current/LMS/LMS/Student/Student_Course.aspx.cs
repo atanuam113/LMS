@@ -20,14 +20,13 @@ namespace LMS.Student
         {
             Profiledetails();
             Registered_Course();
+            course_table();
         }
 
-        private void Registered_Course()
+        private void course_table()
         {
             if (Session["USER_ID"] != null)
             {
-                //string eventid = Session["event_register_id"].ToString();
-                //int e_id = Int32.Parse(eventid);
                 string useremail = Session["USER_ID"].ToString();
 
                 SqlConnection con = new SqlConnection(connectionString);
@@ -37,11 +36,45 @@ namespace LMS.Student
                 string result = (string)learner_id.ExecuteScalar();
 
 
-                SqlCommand course_id_list = new SqlCommand("select Course_ID from course_register_details where learner_id='" + result + "'", con);
-                int c_id_array = (int)course_id_list.ExecuteScalar();
+                //SqlCommand course_id_list = new SqlCommand("select Course_ID from course_register_details where learner_id='" + result + "'", con);
+                //int c_id_array = (int)course_id_list.ExecuteScalar();
 
-                SqlCommand coursedetails = new SqlCommand("select * from CourseDetails where Course_ID IN(@c_id_array)",con);
-                coursedetails.Parameters.AddWithValue("@c_id_array", c_id_array);
+                SqlCommand course_id_list = new SqlCommand("declare @tmp varchar(250) SET @tmp = '' select @tmp = @tmp + cast(Course_ID as Varchar) + ',' from course_register_details where learner_id='" + result + "' select SUBSTRING(@tmp, 0, LEN(@tmp))", con);
+                String c_id_array = (String)course_id_list.ExecuteScalar();
+
+                SqlCommand coursedetails = new SqlCommand("select * from CourseDetails where Course_ID IN(" + c_id_array + ")", con);
+                coursedetails.ExecuteNonQuery();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(coursedetails);
+                da.Fill(dt);
+                course_tbl.DataSource = dt;
+                course_tbl.DataBind();
+                con.Close();
+            }
+
+        }
+
+        private void Registered_Course()
+        {
+            if (Session["USER_ID"] != null)
+            {               
+                string useremail = Session["USER_ID"].ToString();
+
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+
+                SqlCommand learner_id = new SqlCommand("select learner_id from learnerDtl where email_id='" + useremail + "'", con);
+                string result = (string)learner_id.ExecuteScalar();
+
+
+                //SqlCommand course_id_list = new SqlCommand("select Course_ID from course_register_details where learner_id='" + result + "'", con);
+                //int c_id_array = (int)course_id_list.ExecuteScalar();
+                
+                SqlCommand course_id_list = new SqlCommand("declare @tmp varchar(250) SET @tmp = '' select @tmp = @tmp + cast(Course_ID as Varchar) + ',' from course_register_details where learner_id='" + result + "' select SUBSTRING(@tmp, 0, LEN(@tmp))", con);
+                String c_id_array = (String)course_id_list.ExecuteScalar();
+                
+                SqlCommand coursedetails = new SqlCommand("select * from CourseDetails where Course_ID IN(" + c_id_array + ")", con);                
                 coursedetails.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -50,9 +83,8 @@ namespace LMS.Student
                 std_course.DataSource = dt;
                 std_course.DataBind();
                 con.Close();
-
-
             }
+
         }
 
         private void Profiledetails()

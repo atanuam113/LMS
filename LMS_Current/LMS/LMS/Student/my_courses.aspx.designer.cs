@@ -11,25 +11,16 @@ namespace LMS.Student
 {
 
 
-    public partial class Student_Class_Time
+    public partial class my_courses
     {
 
         /// <summary>
-        /// profile_details control.
+        /// mycourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList profile_details;
-
-        /// <summary>
-        /// ClassTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ClassTime;
+        protected global::System.Web.UI.WebControls.DataList mycourse;
     }
 }

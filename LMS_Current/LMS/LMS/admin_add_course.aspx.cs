@@ -21,34 +21,35 @@ namespace LMS
             {             
                 InitialRow();
                 InitialTimetable();
-                //InitialModuleRow();
+                Initial_Exam_Row();
+                InitialModuleRow();
             }
         }
 
-        //private void InitialModuleRow()
-        //{
-        //    DataTable dt2 = new DataTable();
-        //    DataRow dr2 = null;
-        //    dt2.Columns.Add(new DataColumn("CModuleTopic", typeof(string)));
-        //    dt2.Columns.Add(new DataColumn("CModuleType", typeof(string)));
-        //    dt2.Columns.Add(new DataColumn("CModule_Extension", typeof(string)));
-        //    dt2.Columns.Add(new DataColumn("CModule_Content", typeof(string)));
-        //    dt2.Columns.Add(new DataColumn("CModule_Banner", typeof(string)));
-        //    dt2.Columns.Add(new DataColumn("CModule_Upload_Date", typeof(string)));
+        private void InitialModuleRow()
+        {
+            DataTable dt2 = new DataTable();
+            DataRow dr2 = null;
+            dt2.Columns.Add(new DataColumn("CModuleTopic", typeof(string)));
+            dt2.Columns.Add(new DataColumn("CModuleType", typeof(string)));
+            dt2.Columns.Add(new DataColumn("CModule_Extension", typeof(string)));
+            dt2.Columns.Add(new DataColumn("CourseFile", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Module_content", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Content_Date", typeof(string)));
 
-        //    dr2 = dt2.NewRow();
-        //    dr2["CModuleTopic"] = string.Empty;
-        //    dr2["CModuleType"] = string.Empty;
-        //    dr2["CModule_Extension"] = string.Empty;
-        //    dr2["CModule_Content"] = string.Empty;
-        //    dr2["CModule_Banner"] = string.Empty;
-        //    dr2["CModule_Upload_Date"] = string.Empty;
-        //    dt2.Rows.Add(dr2);
+            dr2 = dt2.NewRow();
+            dr2["CModuleTopic"] = string.Empty;
+            dr2["CModuleType"] = string.Empty;
+            dr2["CModule_Extension"] = string.Empty;
+            dr2["CourseFile"] = string.Empty;
+            dr2["Module_content"] = string.Empty;
+            dr2["Content_Date"] = string.Empty;
+            dt2.Rows.Add(dr2);
 
-        //    ViewState["CurrentTable2"] = dt2;
-        //    GridModuleContent.DataSource = dt2;
-        //    GridModuleContent.DataBind();
-        //}
+            ViewState["CurrentTable2"] = dt2;
+            GridModuleContent.DataSource = dt2;
+            GridModuleContent.DataBind();
+        }
 
         private void InitialTimetable()
         {
@@ -102,6 +103,7 @@ namespace LMS
             AddNewRow_Click();
         }
 
+        //Add new row of course syllabus
         private void AddNewRow_Click()
         {
             int rowIndex = 0;
@@ -133,11 +135,7 @@ namespace LMS
                     }
 
                     dtCurrentTable.Rows.Add(drCurrentRow);
-
                     ViewState["CurrentTable"] = dtCurrentTable;
-
-
-
                     CourseSyllabus.DataSource = dtCurrentTable;
 
                     CourseSyllabus.DataBind();
@@ -158,6 +156,7 @@ namespace LMS
             SetPreviousData();
         }
 
+        // Set previous data of course syllabus
         private void SetPreviousData()
         {
             int rowIndex = 0;
@@ -350,25 +349,25 @@ namespace LMS
 
             //Insert data into Course Module content
             //----------------------------------------------------------------------------------
-            SqlConnection sqlConn = new SqlConnection(connectionString);
+            //SqlConnection sqlConn = new SqlConnection(connectionString);
 
-            Stream fs = modulecontent.PostedFile.InputStream;
-            BinaryReader br = new BinaryReader(fs); //reads the binary files  
-            Byte[] bytes = br.ReadBytes((Int32)fs.Length); //counting the file length into bytes  
+            //Stream fs = modulecontent.PostedFile.InputStream;
+            //BinaryReader br = new BinaryReader(fs); //reads the binary files  
+            //Byte[] bytes = br.ReadBytes((Int32)fs.Length); //counting the file length into bytes  
 
-            string query_module_content = "INSERT INTO CourseModuleDetails (Course_ID,Module_Topic,Module_Type,Module_Extension,Module_Content,Module_Upload_Date) VALUES(@Course_ID,@Module_Topic,@Module_Type,@Module_Extension,@Module_Content,@Module_Upload_Date)";
-            SqlCommand sqlinsertquery = new SqlCommand(query_module_content, sqlConn);
+            //string query_module_content = "INSERT INTO CourseModuleDetails (Course_ID,Module_Topic,Module_Type,Module_Extension,Module_Content,Module_Upload_Date) VALUES(@Course_ID,@Module_Topic,@Module_Type,@Module_Extension,@Module_Content,@Module_Upload_Date)";
+            //SqlCommand sqlinsertquery = new SqlCommand(query_module_content, sqlConn);
             
-            sqlinsertquery.Parameters.AddWithValue("@Course_ID", tmp);
-            sqlinsertquery.Parameters.AddWithValue("@Module_Topic", txtmoduletopic.Text);
-            sqlinsertquery.Parameters.AddWithValue("@Module_Type", ddmoduletype.Text);
-            sqlinsertquery.Parameters.AddWithValue("@Module_Extension", DropDownList2.Text);
-            sqlinsertquery.Parameters.AddWithValue("@Module_Content", bytes);
-            sqlinsertquery.Parameters.AddWithValue("@Module_Upload_Date", moduledate.Text);
+            //sqlinsertquery.Parameters.AddWithValue("@Course_ID", tmp);
+            //sqlinsertquery.Parameters.AddWithValue("@Module_Topic", txtmoduletopic.Text);
+            //sqlinsertquery.Parameters.AddWithValue("@Module_Type", ddmoduletype.Text);
+            //sqlinsertquery.Parameters.AddWithValue("@Module_Extension", DropDownList2.Text);
+            //sqlinsertquery.Parameters.AddWithValue("@Module_Content", bytes);
+            //sqlinsertquery.Parameters.AddWithValue("@Module_Upload_Date", moduledate.Text);
 
-            sqlConn.Open();
-            sqlinsertquery.ExecuteNonQuery();
-            sqlConn.Close();
+            //sqlConn.Open();
+            //sqlinsertquery.ExecuteNonQuery();
+            //sqlConn.Close();
 
             //Insert data into Course Class time table
             //----------------------------------------------------------------------------------
@@ -410,19 +409,55 @@ namespace LMS
 
                     cmd1.ExecuteNonQuery();
 
-                    //SetToEmptyGridView();
-                    //InitialRow();
-
-                    con.Close();
+                    con.Close();                    
                 }
                 RowNumber++;
+            }
+            
+            //Insert data into Course Exam table
+            //----------------------------------------------------------------------------------
+            TextBox txtExamName;
+            TextBox ExamDate;
+            TextBox txtStartTime;
+            TextBox txtEndTime;
+            TextBox txtExamLink;
+
+            int RowNumbers = 1;
+            foreach (GridViewRow row2 in CourseExamTable.Rows)
+            {
+                txtExamName = (TextBox)row2.FindControl("txtExamName");
+                ExamDate = (TextBox)row2.FindControl("ExamDate");
+                txtStartTime = (TextBox)row2.FindControl("txtStartTime");
+                txtEndTime = (TextBox)row2.FindControl("txtEndTime");
+                txtExamLink = (TextBox)row2.FindControl("txtExamLink");
+
+                if (txtExamName == null || ExamDate == null || txtStartTime == null || txtEndTime == null || txtExamLink == null)
+                {
+                    return;
+                }
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd2 = new SqlCommand("Course_Exam_Time_Table", conn);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+
+                    cmd2.Parameters.AddWithValue("@e_course", tmp);
+                    cmd2.Parameters.AddWithValue("@e_name", txtExamName.Text.ToString());
+                    cmd2.Parameters.AddWithValue("@e_date", ExamDate.Text.ToString());
+                    cmd2.Parameters.AddWithValue("@start_time", txtStartTime.Text.ToString());
+                    cmd2.Parameters.AddWithValue("@end_time", txtEndTime.Text.ToString());
+                    cmd2.Parameters.AddWithValue("@e_status", "Active");
+                    cmd2.Parameters.AddWithValue("@e_link", txtExamLink.Text.ToString());
+
+                    cmd2.ExecuteNonQuery();
+                    conn.Close();
+                }
+                RowNumbers++;
             }
 
             Response.Redirect("Default.aspx");           
         }
-
-
-
             //Clear DataTable from Gridview
             private void SetToEmptyGridView()
             {
@@ -451,11 +486,11 @@ namespace LMS
                     {
                         //extract the TextBox values
 
-                        TextBox box1 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[0].FindControl("CModuleTopic");
-                        TextBox box2 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[1].FindControl("CModuleType");
-                        TextBox box3 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[2].FindControl("CModule_Extension");
-                        TextBox box4 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[3].FindControl("CModule_Content");
-                        TextBox box5 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[4].FindControl("CModule_Upload_Date");                        
+                        TextBox box1 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[0].FindControl("CModuleTopic");
+                        DropDownList box2 = (DropDownList)GridModuleContent.Rows[rowIndex].Cells[1].FindControl("CModuleType");
+                        DropDownList box3 = (DropDownList)GridModuleContent.Rows[rowIndex].Cells[2].FindControl("CModule_Extension");
+                        TextBox box4 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[3].FindControl("Module_content");
+                        TextBox box5 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[4].FindControl("Content_Date");                        
 
                         drCurrentRow = dtCurrentTable.NewRow();
 
@@ -463,9 +498,10 @@ namespace LMS
                         dtCurrentTable.Rows[i - 1]["CModuleTopic"] = box1.Text;
                         dtCurrentTable.Rows[i - 1]["CModuleType"] = box2.Text;
                         dtCurrentTable.Rows[i - 1]["CModule_Extension"] = box3.Text;
-                        dtCurrentTable.Rows[i - 1]["CModule_Content"] = box4.Text;
-                        dtCurrentTable.Rows[i - 1]["CModule_Upload_Date"] = box5.Text;
+                        dtCurrentTable.Rows[i - 1]["Module_content"] = box4.Text;
+                        dtCurrentTable.Rows[i - 1]["Content_Date"] = box5.Text;
                         
+
                         rowIndex++;
 
                     }
@@ -473,8 +509,8 @@ namespace LMS
                     dtCurrentTable.Rows.Add(drCurrentRow);
 
                     ViewState["CurrentTable2"] = dtCurrentTable;
-                    CourseTimeTable.DataSource = dtCurrentTable;
-                    CourseTimeTable.DataBind();
+                    GridModuleContent.DataSource = dtCurrentTable;
+                    GridModuleContent.DataBind();
 
                 }
 
@@ -502,17 +538,17 @@ namespace LMS
                 {
                     for (int i = 1; i <= dt.Rows.Count; i++)
                     {
-                        TextBox box1 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[0].FindControl("CModuleTopic");
-                        TextBox box2 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[1].FindControl("CModuleType");
-                        TextBox box3 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[2].FindControl("CModule_Extension");
-                        TextBox box4 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[3].FindControl("CModule_Content");
-                        TextBox box5 = (TextBox)CourseTimeTable.Rows[rowIndex].Cells[4].FindControl("CModule_Upload_Date");
+                        TextBox box1 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[0].FindControl("CModuleTopic");
+                        DropDownList box2 = (DropDownList)GridModuleContent.Rows[rowIndex].Cells[1].FindControl("CModuleType");
+                        DropDownList box3 = (DropDownList)GridModuleContent.Rows[rowIndex].Cells[2].FindControl("CModule_Extension");
+                        TextBox box4 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[3].FindControl("Module_content");
+                        TextBox box5 = (TextBox)GridModuleContent.Rows[rowIndex].Cells[4].FindControl("Content_Date");
                         
                         box1.Text = dt.Rows[i - 1]["CModuleTopic"].ToString();
                         box2.Text = dt.Rows[i - 1]["CModuleType"].ToString();
                         box3.Text = dt.Rows[i - 1]["CModule_Extension"].ToString();
-                        box4.Text = dt.Rows[i - 1]["CModule_Content"].ToString();
-                        box5.Text = dt.Rows[i - 1]["CModule_Upload_Date"].ToString();
+                        box4.Text = dt.Rows[i - 1]["Module_content"].ToString();
+                        box5.Text = dt.Rows[i - 1]["Content_Date"].ToString();
                         
                         rowIndex++;
 
@@ -521,6 +557,113 @@ namespace LMS
                 }
 
             }
+        }
+
+        //Add Exam new row
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddExam_Row();
+        }
+
+        //new Exam add function
+        private void AddExam_Row()
+        {
+            int rowIndex = 0;
+            if (ViewState["CurrentTable3"] != null)
+            {
+                DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable3"];
+                DataRow drCurrentRow = null;
+                if (dtCurrentTable.Rows.Count > 0)
+                {
+                    for (int i = 1; i <= dtCurrentTable.Rows.Count; i++)
+                    {
+                        //extract the TextBox values
+
+                        TextBox box1 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[0].FindControl("txtExamName");
+                        TextBox box2 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[1].FindControl("ExamDate");
+                        TextBox box3 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[2].FindControl("txtStartTime");
+                        TextBox box4 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[3].FindControl("txtEndTime");
+                        TextBox box5 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[4].FindControl("txtExamLink");
+                        
+
+                        drCurrentRow = dtCurrentTable.NewRow();
+
+                        //drCurrentRow["SlNo"] = i + 1;
+                        dtCurrentTable.Rows[i - 1]["txtExamName"] = box1.Text;
+                        dtCurrentTable.Rows[i - 1]["ExamDate"] = box2.Text;
+                        dtCurrentTable.Rows[i - 1]["txtStartTime"] = box3.Text;
+                        dtCurrentTable.Rows[i - 1]["txtEndTime"] = box4.Text;
+                        dtCurrentTable.Rows[i - 1]["txtExamLink"] = box5.Text;
+                        
+                        rowIndex++;
+                    }
+                    dtCurrentTable.Rows.Add(drCurrentRow);
+                    ViewState["CurrentTable3"] = dtCurrentTable;
+                    CourseExamTable.DataSource = dtCurrentTable;
+                    CourseExamTable.DataBind();
+                }
+            }
+            else
+            {
+                Response.Write("ViewState is null");
+            }
+            //Set Previous Data on Postbacks
+
+            SetPreviousExamData();
+        }
+        //Set Previous Exam data
+        private void SetPreviousExamData()
+        {
+            int rowIndex = 0;
+            if (ViewState["CurrentTable3"] != null)
+            {
+                DataTable dt = (DataTable)ViewState["CurrentTable3"];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 1; i <= dt.Rows.Count; i++)
+                    {
+                        TextBox box1 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[0].FindControl("txtExamName");
+                        TextBox box2 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[1].FindControl("ExamDate");
+                        TextBox box3 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[2].FindControl("txtStartTime");
+                        TextBox box4 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[3].FindControl("txtEndTime");
+                        TextBox box5 = (TextBox)CourseExamTable.Rows[rowIndex].Cells[4].FindControl("txtExamLink");                        
+
+                        box1.Text = dt.Rows[i - 1]["txtExamName"].ToString();
+                        box2.Text = dt.Rows[i - 1]["ExamDate"].ToString();
+                        box3.Text = dt.Rows[i - 1]["txtStartTime"].ToString();
+                        box4.Text = dt.Rows[i - 1]["txtEndTime"].ToString();
+                        box5.Text = dt.Rows[i - 1]["txtExamLink"].ToString();                        
+
+                        rowIndex++;
+
+                    }
+
+                }
+
+            }
+        }
+        //Initial Exam row
+        private void Initial_Exam_Row()
+        {
+            DataTable dt1 = new DataTable();
+            DataRow dr1 = null;
+            dt1.Columns.Add(new DataColumn("txtExamName", typeof(string)));
+            dt1.Columns.Add(new DataColumn("ExamDate", typeof(string)));
+            dt1.Columns.Add(new DataColumn("txtStartTime", typeof(string)));
+            dt1.Columns.Add(new DataColumn("txtEndTime", typeof(string)));            
+            dt1.Columns.Add(new DataColumn("txtExamLink", typeof(string)));
+
+            dr1 = dt1.NewRow();
+            dr1["txtExamName"] = string.Empty;
+            dr1["ExamDate"] = string.Empty;
+            dr1["txtStartTime"] = string.Empty;
+            dr1["txtEndTime"] = string.Empty;            
+            dr1["txtExamLink"] = string.Empty;
+            dt1.Rows.Add(dr1);
+
+            ViewState["CurrentTable3"] = dt1;
+            CourseExamTable.DataSource = dt1;
+            CourseExamTable.DataBind();
         }
     }
     

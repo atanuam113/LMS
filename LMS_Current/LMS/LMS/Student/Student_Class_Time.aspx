@@ -23,157 +23,60 @@
     </div>
     <div class="stu-db">
         <div class="container pg-inn">
+
             <div class="col-md-3">
-                <div class="pro-user">
-                    <img src="../fonts/images/dp.jpg" alt="user">
-                </div>
-                <div class="pro-user-bio">
-                    <ul>
-                        <li>
-                            <h4>Atanu Mondal</h4>
-                        </li>
-                        <li>Student Id: ST17241</li>
-                        <li><a href="#!"><i class="fa fa-facebook"></i> Facebook: my sample</a></li>
-                        <li><a href="#!"><i class="fa fa-google-plus"></i> Google: my sample</a></li>
-                        <li><a href="#!"><i class="fa fa-twitter"></i> Twitter: my sample</a></li>
-                    </ul>
-                </div>
+                <asp:DataList runat="server" ID="profile_details">
+                        <ItemTemplate>
+                            <div class="pro-user">
+                                <img src="<%#Eval("l_pimage") %>" alt="user">
+                            </div>
+                            <div class="pro-user-bio">
+                                <ul>
+                                    <li>
+                                        <h4><%#Eval("f_name") %> <%#Eval("l_name") %></h4>
+                                    </li>
+                                    <li>Student Id: <%#Eval("learner_id") %></li>
+                                </ul>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
             </div>
+
             <div class="col-md-9">
                 <div class="udb">
                     <div class="udb-sec udb-time">
                         <h4><img src="../fonts/images/icon/db4.png" alt="" /> Class Time Line</h4>                        
                         <div class="tour_head1 udb-time-line days">
                             <ul>
-                                <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <div class="sdb-cl-tim">
-                                        <div class="sdb-cl-day">
-                                            <h5>Today</h5>
-                                            <span>10Sep 2018</span>
+                                <asp:DataList runat="server" ID="ClassTime">
+                                        <ItemTemplate>
+                                            
+                                    <li class="l-info-pack-plac"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <div class="sdb-cl-tim">
+                                            <div class="sdb-cl-day">
+                                                <h5><%#Eval("CR_Day") %></h5>
+                                                <span>Start date: <%#Eval("CR_Date", "{0:d}") %></span>
+                                            </div>
+                                            <div class="sdb-cl-class">
+                                                <ul>
+                                                    <li>
+                                                        <div class="sdb-cl-class-tim tooltipped" data-position="top" data-delay="50" data-tooltip="Class timing">
+                                                            <span><%#Eval("CR_Start_Time") %></span>
+                                                            <span><%#Eval("CR_End_Time") %></span>
+                                                        </div>
+                                                        <div class="sdb-cl-class-name tooltipped" data-position="top" data-delay="50" data-tooltip="Class Details">
+                                                            <h5><%#Eval("CR_Topic") %> <a href="<%#Eval("CR_ClassLink") %>"><span>JOIN CLASS</span></a></h5>
+                                                            <span class="sdn-hall-na">Online mode</span>
+                                                        </div>
+                                                    </li>                                                    
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="sdb-cl-class">
-                                            <ul>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>9:30 am</span>
-                                                        <span>10:15 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Software Testing <span>John Smith</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>10:15 am</span>
-                                                        <span>11:00 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Mechanical Design Classes <span>Stephanie</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>11:00 am</span>
-                                                        <span>11:45 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                        <h5>Board Exam Training Classes <span>Matthew</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <div class="sdb-cl-tim">
-                                        <div class="sdb-cl-day">
-                                            <h5>Tuesday</h5>
-                                            <span>11Sep 2018</span>
-                                        </div>
-                                        <div class="sdb-cl-class">
-                                            <ul>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>9:30 am</span>
-                                                        <span>10:15 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Agriculture <span>John Smith</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>10:15 am</span>
-                                                        <span>11:00 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Google Product Training <span>Stephanie</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>11:00 am</span>
-                                                        <span>11:45 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                        <h5>Web Design & Development <span>Matthew</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <div class="sdb-cl-tim">
-                                        <div class="sdb-cl-day">
-                                            <h5>Wednesday</h5>
-                                            <span>12Sep 2018</span>
-                                        </div>
-                                        <div class="sdb-cl-class">
-                                            <ul>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>9:30 am</span>
-                                                        <span>10:15 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Software Testing <span>John Smith</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>10:15 am</span>
-                                                        <span>11:00 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name">
-                                                        <h5>Mechanical Design Classes <span>Stephanie</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="sdb-cl-class-tim">
-                                                        <span>11:00 am</span>
-                                                        <span>11:45 am</span>
-                                                    </div>
-                                                    <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                        <h5>Board Exam Training Classes <span>Matthew</span></h5>
-                                                        <span class="sdn-hall-na">Apj Hall 112</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <h4><span>Holiday: </span> Thursday </h4>                                    
-                                </li>
+                                    </li>
+
+                                        </ItemTemplate>
+                                    </asp:DataList> 
+                                
                             </ul>
                         </div>
                     </div>
